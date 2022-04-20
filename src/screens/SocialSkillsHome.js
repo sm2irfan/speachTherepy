@@ -49,9 +49,9 @@ const SocialSkillsHome = ({ navigation }) => {
 					}}
 				/>
 				<SocialSkillType
-					name={'Intractive Characters'}
+					name={'Interactive Characters'}
 					onpress={() => {
-						navigation.navigate('IntractiveCharacters');
+						navigation.navigate('InteractiveCharacters');
 					}}
 				/>
 			</View>
