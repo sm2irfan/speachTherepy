@@ -11,6 +11,15 @@ const Home = ({ navigation }) => {
 				}}>
 				<Text type="label">Social Skills</Text>
 			</TouchableOpacity>
+			<TouchableOpacity onPress={() => {}}>
+				<Text type="label">Communication Skills</Text>
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => {}}>
+				<Text type="label">Cognitive Skills</Text>
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => {}}>
+				<Text type="label">Acadamic Skills</Text>
+			</TouchableOpacity>
 		</View>
 	);
 };
