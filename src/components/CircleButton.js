@@ -14,8 +14,8 @@ const CircleButton = ({ icon, onPress }) => {
 
 const styles = StyleSheet.create({
 	circleButton: {
-		width: 55,
-		height: 55,
+		width: 50,
+		height: 50,
 		padding: 10,
 		marginTop: 5,
 		borderRadius: 100 / 2,

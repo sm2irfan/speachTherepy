@@ -1,0 +1,90 @@
+import React from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import { CircleButton, Text } from '../components';
+import Instruction from '../assets/images/Instruction.png';
+import AR from '../assets/images/AR.png';
+import Info from '../assets/images/Info.png';
+
+const data = [
+	{
+		name: 'when i get ready',
+	},
+	{
+		name: 'when i brush my teeth',
+	},
+];
+
+const SocialStorieType = ({ story, onpressInfo, onpressAR }) => {
+	return (
+		<View style={styles.container}>
+			<View style={styles.section}>
+				<Text type="body">{story.name}:</Text>
+			</View>
+			<View style={styles.rightIconSection}>
+				<CircleButton icon={Info} onPress={onpressInfo} />
+				<CircleButton icon={AR} onPress={onpressAR} />
+			</View>
+		</View>
+	);
+};
+
+const SocialStories = ({ navigation }) => {
+	return (
+		<ScrollView
+			contentContainerStyle={styles.mainContainer}
+			showsVerticalScrollIndicator={false}>
+			<View style={styles.headerContainer}>
+				<Text type="title" style={styles.headText}>
+					Social Stories
+				</Text>
+				<View style={styles.infoIconContainer}>
+					<CircleButton icon={Instruction} onPress={() => {}} />
+				</View>
+			</View>
+			{data.map((item, index) => (
+				<SocialStorieType key={index} story={item} />
+			))}
+		</ScrollView>
+	);
+};
+const styles = StyleSheet.create({
+	mainContainer: {
+		flexGrow: 1,
+		padding: 15,
+	},
+	headText: {
+		paddingTop: 20,
+		paddingBottom: 25,
+		paddingLeft: 5,
+	},
+	container: {
+		paddingRight: 5,
+		paddingBottom: 5,
+		paddingLeft: 15,
+		paddingTop: 10,
+		borderRadius: 10,
+		backgroundColor: 'white',
+		elevation: 0.7,
+		width: '100%',
+		marginTop: 15,
+		justifyContent: 'space-between',
+	},
+	section: {
+		flex: 1,
+		flexDirection: 'row',
+		paddingBottom: 5,
+	},
+	rightIconSection: {
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+	},
+	headerContainer: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+	},
+	infoIconContainer: {
+		paddingTop: 10,
+	},
+});
+
+export default SocialStories;
