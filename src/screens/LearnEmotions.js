@@ -14,15 +14,15 @@ const data = [
 	},
 ];
 
-const EmotionType = ({ emotion, onpressInfo, onpressAR }) => {
+const EmotionType = ({ emotion, onPressInfo, onPressAR }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.section}>
 				<Text type="body">{emotion.name}</Text>
 			</View>
 			<View style={styles.rightIconSection}>
-				<CircleButton icon={Info} onPress={onpressInfo} />
-				<CircleButton icon={AR} onPress={onpressAR} />
+				<CircleButton icon={Info} onPress={onPressInfo} />
+				<CircleButton icon={AR} onPress={onPressAR} />
 			</View>
 		</View>
 	);
