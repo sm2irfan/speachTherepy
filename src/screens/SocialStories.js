@@ -14,7 +14,7 @@ const data = [
 	},
 ];
 
-const SocialStorieType = ({ story, onpressInfo, onpressAR }) => {
+const SocialStoryType = ({ story, onpressInfo, onpressAR }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.section}>
@@ -42,7 +42,7 @@ const SocialStories = ({ navigation }) => {
 				</View>
 			</View>
 			{data.map((item, index) => (
-				<SocialStorieType key={index} story={item} />
+				<SocialStoryType key={index} story={item} />
 			))}
 		</ScrollView>
 	);
