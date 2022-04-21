@@ -29,6 +29,10 @@ const EmotionType = ({ character, onPressInfo, onPressAR }) => {
 };
 
 const InteractiveCharacters = ({ navigation }) => {
+	const onPressInstruction = () => {
+		navigation.navigate('InteractiveCharactersInstruction');
+	};
+
 	return (
 		<ScrollView
 			contentContainerStyle={styles.mainContainer}
@@ -38,7 +42,10 @@ const InteractiveCharacters = ({ navigation }) => {
 					Interactive Characters
 				</Text>
 				<View style={styles.infoIconContainer}>
-					<CircleButton icon={Instruction} onPress={() => {}} />
+					<CircleButton
+						icon={Instruction}
+						onPress={onPressInstruction}
+					/>
 				</View>
 			</View>
 			{data.map((item, index) => (
