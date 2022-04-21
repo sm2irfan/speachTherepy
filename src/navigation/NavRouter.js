@@ -7,6 +7,9 @@ import SocialSkillsHome from '../screens/SocialSkillsHome';
 import LearnEmotions from '../screens/LearnEmotions';
 import SocialStories from '../screens/SocialStories';
 import InteractiveCharacters from '../screens/InteractiveCharacters';
+import SocialStoriesInstruction from '../screens/SocialStoriesInstruction';
+import LearnEmotionsInstruction from '../screens/LearnEmotionsInstruction';
+import InteractiveCharactersInstruction from '../screens/InteractiveCharactersInstruction';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +31,18 @@ const NavRouter = () => {
 				<Stack.Screen
 					name="InteractiveCharacters"
 					component={InteractiveCharacters}
+				/>
+				<Stack.Screen
+					name="SocialStoriesInstruction"
+					component={SocialStoriesInstruction}
+				/>
+				<Stack.Screen
+					name="LearnEmotionsInstruction"
+					component={LearnEmotionsInstruction}
+				/>
+				<Stack.Screen
+					name="InteractiveCharactersInstruction"
+					component={InteractiveCharactersInstruction}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
