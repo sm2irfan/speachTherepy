@@ -10,7 +10,7 @@ import InteractiveCharacters from '../screens/InteractiveCharacters';
 import SocialStoriesInstruction from '../screens/SocialStoriesInstruction';
 import LearnEmotionsInstruction from '../screens/LearnEmotionsInstruction';
 import InteractiveCharactersInstruction from '../screens/InteractiveCharactersInstruction';
-import CognitiveSkillsHome from '../screens/CognitiveSkills';
+import CognitiveSkillsHome from '../screens/CognitiveSkillsHome';
 const Stack = createNativeStackNavigator();
 
 const NavRouter = () => {
