@@ -14,7 +14,10 @@ const Home = ({ navigation }) => {
 			<TouchableOpacity onPress={() => {}}>
 				<Text type="label">Communication Skills</Text>
 			</TouchableOpacity>
-			<TouchableOpacity onPress={() => {}}>
+			<TouchableOpacity
+				onPress={() => {
+					navigation.navigate('CognitiveSkillsHome');
+				}}>
 				<Text type="label">Cognitive Skills</Text>
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => {}}>
