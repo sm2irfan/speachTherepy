@@ -14,21 +14,25 @@ const data = [
 	},
 ];
 
-const SocialStoryType = ({ story, onpressInfo, onpressAR }) => {
+const SocialStoryType = ({ story, onPressInfo, onPressAR }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.section}>
 				<Text type="body">{story.name}:</Text>
 			</View>
 			<View style={styles.rightIconSection}>
-				<CircleButton icon={Info} onPress={onpressInfo} />
-				<CircleButton icon={AR} onPress={onpressAR} />
+				<CircleButton icon={Info} onPress={onPressInfo} />
+				<CircleButton icon={AR} onPress={onPressAR} />
 			</View>
 		</View>
 	);
 };
 
 const SocialStories = ({ navigation }) => {
+	const onPressInstruction = () => {
+		navigation.navigate('SocialStoriesInstruction');
+	};
+
 	return (
 		<ScrollView
 			contentContainerStyle={styles.mainContainer}
@@ -38,7 +42,10 @@ const SocialStories = ({ navigation }) => {
 					Social Stories
 				</Text>
 				<View style={styles.infoIconContainer}>
-					<CircleButton icon={Instruction} onPress={() => {}} />
+					<CircleButton
+						icon={Instruction}
+						onPress={onPressInstruction}
+					/>
 				</View>
 			</View>
 			{data.map((item, index) => (
