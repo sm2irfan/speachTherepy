@@ -11,6 +11,8 @@ import SocialStoriesInstruction from '../screens/SocialStoriesInstruction';
 import LearnEmotionsInstruction from '../screens/LearnEmotionsInstruction';
 import InteractiveCharactersInstruction from '../screens/InteractiveCharactersInstruction';
 import CognitiveSkillsHome from '../screens/CognitiveSkillsHome';
+import RountTable from '../screens/RountTable';
+import RountTable2 from '../screens/RountTable2';
 const Stack = createNativeStackNavigator();
 
 const NavRouter = () => {
@@ -48,6 +50,8 @@ const NavRouter = () => {
 					name="CognitiveSkillsHome"
 					component={CognitiveSkillsHome}
 				/>
+				<Stack.Screen name="RountTable" component={RountTable} />
+				<Stack.Screen name="RountTable2" component={RountTable2} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
