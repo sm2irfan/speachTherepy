@@ -38,8 +38,18 @@ const CognitiveSkillsHome = ({ navigation }) => {
 				Cognitive Skills
 			</Text>
 			<View style={styles.list}>
-				<CognitiveSkillType name={''} onpress={() => {}} />
-				<CognitiveSkillType name={''} onpress={() => {}} />
+				<CognitiveSkillType
+					name={'RountTable'}
+					onpress={() => {
+						navigation.navigate('RountTable');
+					}}
+				/>
+				<CognitiveSkillType
+					name={'RountTable2'}
+					onpress={() => {
+						navigation.navigate('RountTable2');
+					}}
+				/>
 				<CognitiveSkillType name={''} onpress={() => {}} />
 			</View>
 		</ScrollView>
