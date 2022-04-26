@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 		marginTop: 5,
 		borderRadius: 100 / 2,
 		marginHorizontal: 5,
-		backgroundColor: 'rgba(52, 52, 52, 0.5)',
+		backgroundColor: 'rgba(52, 52, 52, 0.)',
 	},
 	icon: {
 		height: '100%',

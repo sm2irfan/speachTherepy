@@ -13,9 +13,9 @@ import {
 	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 
-import { Square } from '../components';
-import { Triangle } from '../components';
-import { Circle } from '../components';
+import TriangleSec from '../components/TriangleSec';
+import Heart from '../components/Heart';
+import SquareSce from '../components/SquareSec';
 
 const CIRCLE_RADIUS = 200;
 
@@ -24,17 +24,17 @@ type ContextType = {
 	translateYSquare: number;
 	translateXTriangle: number;
 	translateYTriangle: number;
-	translateXCircle: number;
-	translateYCircle: number;
+	translateXHeart: number;
+	translateYHeart: number;
 };
 
 export default function App() {
-	const translateXSquare = useSharedValue(-153);
-	const translateYSquare = useSharedValue(150);
-	const translateXTriangle = useSharedValue(-70);
-	const translateYTriangle = useSharedValue(100);
-	const translateXCircle = useSharedValue(-10);
-	const translateYCircle = useSharedValue(40);
+	const translateXSquare = useSharedValue(0);
+	const translateYSquare = useSharedValue(0);
+	const translateXTriangle = useSharedValue(0);
+	const translateYTriangle = useSharedValue(0);
+	const translateXHeart = useSharedValue(0);
+	const translateYHeart = useSharedValue(0);
 
 	/*Square
 	 * 
@@ -58,21 +58,21 @@ export default function App() {
 				event.translationY + context.translateYSquare;
 		},
 		onEnd: () => {
-			const distance = Math.sqrt(
-				translateXSquare.value ** 2 + translateYSquare.value ** 2,
-			);
+			console.log('x', translateXHeart, 'y', translateYHeart);
+			const xSitLocation = -170;
+			const ySitLocation = -175;
 
 			if (
-				translateYSquare.value > -240 &&
-				translateYSquare.value < -140 &&
-				translateXSquare.value > -35 &&
-				translateXSquare.value < 35
+				translateYSquare.value > ySitLocation - 40 &&
+				translateYSquare.value < ySitLocation + 40 &&
+				translateXSquare.value > xSitLocation - 40 &&
+				translateXSquare.value < xSitLocation + 40
 			) {
 				translateXSquare.value = withSpring(0);
 				translateYSquare.value = withSpring(-165);
 			} else {
-				translateXSquare.value = withSpring(-153);
-				translateYSquare.value = withSpring(150);
+				translateXSquare.value = withSpring(0);
+				translateYSquare.value = withSpring(0);
 			}
 		},
 	});
@@ -113,17 +113,20 @@ export default function App() {
 		},
 		onEnd: () => {
 			console.log('x', translateXTriangle, 'y', translateYTriangle);
+			const xSitLocation = -170;
+			const ySitLocation = -175;
+
 			if (
-				translateYTriangle.value > -240 &&
-				translateYTriangle.value < -160 &&
-				translateXTriangle.value > -150 &&
-				translateXTriangle.value < -90
+				translateYTriangle.value > ySitLocation - 40 &&
+				translateYTriangle.value < ySitLocation + 40 &&
+				translateXTriangle.value > xSitLocation - 40 &&
+				translateXTriangle.value < xSitLocation + 40
 			) {
-				translateXTriangle.value = withSpring(-130);
+				translateXTriangle.value = withSpring(-170);
 				translateYTriangle.value = withSpring(-176);
 			} else {
-				translateXTriangle.value = withSpring(-75);
-				translateYTriangle.value = withSpring(100);
+				translateXTriangle.value = withSpring(0);
+				translateYTriangle.value = withSpring(0);
 			}
 		},
 	});
@@ -141,52 +144,55 @@ export default function App() {
 		};
 	});
 
-	/*Circle
+	/*Heart
 	 * 
 	 * 
 	 * 
 	 * 
-	Circle */
+	Heart */
 
-	const panGestureEventCircle = useAnimatedGestureHandler<
+	const panGestureEventHeart = useAnimatedGestureHandler<
 		PanGestureHandlerGestureEvent,
 		ContextType
 	>({
 		onStart: (event, context) => {
-			context.translateXCircle = translateXCircle.value;
-			context.translateYCircle = translateYCircle.value;
+			context.translateXHeart = translateXHeart.value;
+			context.translateYHeart = translateYHeart.value;
 		},
 		onActive: (event, context) => {
-			translateXCircle.value =
-				event.translationX + context.translateXCircle;
-			translateYCircle.value =
-				event.translationY + context.translateYCircle;
+			translateXHeart.value =
+				event.translationX + context.translateXHeart;
+			translateYHeart.value =
+				event.translationY + context.translateYHeart;
 		},
 		onEnd: () => {
-			console.log('x', translateXCircle, 'y', translateYCircle);
+			console.log('x', translateXHeart, 'y', translateYHeart);
+			const xSitLocation = -160;
+			const ySitLocation = -100;
+
 			if (
-				translateYCircle.value > -240 &&
-				translateYCircle.value < -160 &&
-				translateXCircle.value > -150 &&
-				translateXCircle.value < -90
+				translateYHeart.value > ySitLocation - 40 &&
+				translateYHeart.value < ySitLocation + 40 &&
+				translateXHeart.value > xSitLocation - 40 &&
+				translateXHeart.value < xSitLocation + 40
 			) {
-				translateXCircle.value = withSpring(-130);
-				translateYCircle.value = withSpring(-176);
+				translateXHeart.value = withSpring(-166);
+				translateYHeart.value = withSpring(-102);
 			} else {
-				translateXCircle.value = withSpring(-5);
-				translateYCircle.value = withSpring(45);
+				translateXHeart.value = withSpring(0);
+				translateYHeart.value = withSpring(0);
 			}
 		},
 	});
 
-	const rStyleCircle = useAnimatedStyle(() => {
+	const rStyleHeart = useAnimatedStyle(() => {
 		return {
 			transform: [
 				{
-					translateX: translateXCircle.value,
+					translateX: translateXHeart.value,
 				},
 				{
-					translateY: translateYCircle.value,
+					translateY: translateYHeart.value,
 				},
 			],
 		};
@@ -194,31 +200,70 @@ export default function App() {
 
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
-			<View style={styles.container}>
-				<Square size="medium" />
-				<Circle size="dotCenter" />
-				<Circle size="dotLeft" />
-				<Circle size="dotRight" />
-				<Triangle size="medium" />
-				<Circle size="dotCenter" />
-				<Circle size="dotLeft" />
-				<Circle size="dotRight" />
-				<Circle size="medium" />
-
+			<View style={[styles.headShape]}>
+				<View
+					style={{
+						transform: [{ translateX: 20 }, { translateY: -10 }],
+					}}>
+					<TriangleSec
+						height={90}
+						widht={70}
+						color="rgba(255, 255, 0, 0.5)"
+					/>
+				</View>
+				<View
+					style={{
+						transform: [{ translateX: 80 }, { translateY: 0 }],
+					}}>
+					<Heart
+						height={65}
+						widht={65}
+						color="rgba(0, 128, 0, 0.5)"
+					/>
+				</View>
+				<View
+					style={{
+						transform: [{ translateX: 150 }, { translateY: 0 }],
+					}}>
+					<SquareSce
+						height={70}
+						widht={100}
+						color="rgba(0, 0, 256, 0.5)"
+					/>
+				</View>
+			</View>
+			<View style={[styles.container, { flexDirection: 'row' }]}>
 				<PanGestureHandler onGestureEvent={panGestureEventSquare}>
-					<Animated.View style={[styles.square, rStyleSquare]} />
+					<Animated.View style={[rStyleSquare]}>
+						<SquareSce
+							height={70}
+							widht={100}
+							color="rgba(0, 0, 256, 1)"
+						/>
+					</Animated.View>
 				</PanGestureHandler>
 				<PanGestureHandler onGestureEvent={panGestureEventTriangle}>
-					<Animated.View style={[styles.triangle, rStyleTriangle]} />
+					<Animated.View style={[rStyleTriangle, { margin: 20 }]}>
+						<TriangleSec
+							height={90}
+							widht={70}
+							color="rgba(255, 255, 0, 1)"
+						/>
+					</Animated.View>
 				</PanGestureHandler>
-				<PanGestureHandler onGestureEvent={panGestureEventCircle}>
-					<Animated.View style={[styles.circle, rStyleCircle]} />
+				<PanGestureHandler onGestureEvent={panGestureEventHeart}>
+					<Animated.View style={rStyleHeart}>
+						<Heart
+							height={60}
+							widht={60}
+							color="rgba(0, 128, 0, 1)"
+						/>
+					</Animated.View>
 				</PanGestureHandler>
 			</View>
 		</GestureHandlerRootView>
 	);
 }
-
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -226,33 +271,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	square: {
-		width: 50,
-		height: 50,
-		backgroundColor: 'rgba(0, 0, 256, 1)',
-		borderRadius: 5,
-	},
-
-	triangle: {
-		width: 0,
-		height: 0,
-		backgroundColor: 'transparent',
-		borderStyle: 'solid',
-		borderLeftWidth: 25,
-		borderRightWidth: 25,
-		borderBottomWidth: 50,
-		borderLeftColor: 'transparent',
-		borderRightColor: 'transparent',
-		borderBottomColor: 'rgba(255, 0, 0, 0.8)',
-	},
-	circle: {
-		width: 55,
-		height: 55,
-		alignItems: 'center',
-		justifyContent: 'center',
-		borderRadius: 100,
-		borderWidth: 5,
-		borderColor: 'rgba(0, 0, 40, 0.5)',
-		backgroundColor: 'rgba(0, 0, 40, 0.5)',
+	headShape: {
+		flexDirection: 'row',
+		transform: [{ translateX: 0 }, { translateY: 50 }],
+		height: 120,
+		backgroundColor: 'rgba(128,128,0,0.3)',
+		// padding: 5,
+		marginLeft: 2,
 	},
 });
