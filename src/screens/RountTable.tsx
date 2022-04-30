@@ -4,17 +4,26 @@ import { Text } from '../components';
 import Triangle from '../components/TriangleSec';
 import Heart from '../components/Heart';
 import SquareSce from '../components/SquareSec';
+import Arrowicon from '../components/Arrowicon';
 
 const RountTable = () => {
 	return (
-		<View
-			style={{
-				flexDirection: 'row',
-				transform: [{ translateX: 0 }, { translateY: 50 }],
-			}}>
-			<Triangle height={150} widht={100} color="blue" />
-			<Heart height={300} widht={180} color="red" />
-			<SquareSce height={300} widht={200} color="red" />
+		<View>
+			<View
+				style={{
+					flexDirection: 'row',
+					transform: [{ translateX: 0 }, { translateY: 50 }],
+				}}>
+				<Triangle height={100} widht={100} color="blue" />
+				<Heart height={100} widht={180} color="red" />
+				<SquareSce height={100} widht={200} color="red" />
+			</View>
+			<View
+				style={{
+					transform: [{ translateX: 100 }, { translateY: 200 }],
+				}}>
+				<Arrowicon height={200} widht={200} color="red" />
+			</View>
 		</View>
 	);
 };

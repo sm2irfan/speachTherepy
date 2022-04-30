@@ -30,7 +30,7 @@ type ContextType = {
 
 export default function App() {
 	const translateXSquare = useSharedValue(0);
-	const translateYSquare = useSharedValue(0);
+	const translateYSquare = useSharedValue(100);
 	const translateXTriangle = useSharedValue(0);
 	const translateYTriangle = useSharedValue(0);
 	const translateXHeart = useSharedValue(0);
@@ -72,7 +72,7 @@ export default function App() {
 				translateYSquare.value = withSpring(-165);
 			} else {
 				translateXSquare.value = withSpring(0);
-				translateYSquare.value = withSpring(0);
+				translateYSquare.value = withSpring(100);
 			}
 		},
 	});
