@@ -50,7 +50,12 @@ const CognitiveSkillsHome = ({ navigation }) => {
 						navigation.navigate('RountTable2');
 					}}
 				/>
-				<CognitiveSkillType name={''} onpress={() => {}} />
+				<CognitiveSkillType
+					name={'HalfMatch'}
+					onpress={() => {
+						navigation.navigate('HalfMatch');
+					}}
+				/>
 			</View>
 		</ScrollView>
 	);

@@ -13,6 +13,7 @@ import InteractiveCharactersInstruction from '../screens/InteractiveCharactersIn
 import CognitiveSkillsHome from '../screens/CognitiveSkillsHome';
 import RountTable from '../screens/RountTable';
 import RountTable2 from '../screens/RountTable2';
+import HalfMatch from '../screens/HalfMatch';
 const Stack = createNativeStackNavigator();
 
 const NavRouter = () => {
@@ -52,6 +53,7 @@ const NavRouter = () => {
 				/>
 				<Stack.Screen name="RountTable" component={RountTable} />
 				<Stack.Screen name="RountTable2" component={RountTable2} />
+				<Stack.Screen name="HalfMatch" component={HalfMatch} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

@@ -6,13 +6,11 @@ interface SquareProps {
 	color?: string;
 	widht?: number;
 	height?: number;
-	boxWidth?: number;
 }
 const SquareSec = ({
 	color = '#000000',
 	widht = 10,
 	height = 18,
-	boxWidth = 100,
 }: SquareProps) => {
 	return (
 		<View>
@@ -20,7 +18,7 @@ const SquareSec = ({
 				<Path
 					fill={color}
 					fillRule="evenodd"
-					d="M10 10 H 90 V 90 H 10 L 10 10"
+					d="M10 10 H 35 V 90 H 10 L 10 10"
 				/>
 			</Svg>
 		</View>
