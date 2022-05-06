@@ -56,6 +56,12 @@ const CognitiveSkillsHome = ({ navigation }) => {
 						navigation.navigate('HalfMatch');
 					}}
 				/>
+				<CognitiveSkillType
+					name={'BigAndSmall'}
+					onpress={() => {
+						navigation.navigate('BigAndSmall');
+					}}
+				/>
 			</View>
 		</ScrollView>
 	);

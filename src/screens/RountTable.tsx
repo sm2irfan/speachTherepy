@@ -5,6 +5,7 @@ import Triangle from '../components/TriangleSec';
 import Heart from '../components/Heart';
 import SquareSce from '../components/SquareSec';
 import Arrowicon from '../components/Arrowicon';
+import Rabit from '../components/bigSmallComponents/Rabbit';
 
 const RountTable = () => {
 	return (
@@ -22,7 +23,7 @@ const RountTable = () => {
 				style={{
 					transform: [{ translateX: 100 }, { translateY: 200 }],
 				}}>
-				<Arrowicon height={200} widht={200} color="red" />
+				<Rabit height={350} widht={250} color="red" />
 			</View>
 		</View>
 	);
