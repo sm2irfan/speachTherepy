@@ -4,17 +4,17 @@ import Svg, { Path } from 'react-native-svg';
 
 interface SquareProps {
 	color?: string;
-	widht?: number;
+	width?: number;
 	height?: number;
 }
 const SquareSec = ({
 	color = '#000000',
-	widht = 10,
+	width = 10,
 	height = 18,
 }: SquareProps) => {
 	return (
 		<View>
-			<Svg width={widht} height={height} viewBox="0 0 100 100">
+			<Svg width={width} height={height} viewBox="0 0 100 100">
 				<Path
 					fill={color}
 					fillRule="evenodd"

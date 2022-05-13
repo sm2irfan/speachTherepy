@@ -4,17 +4,17 @@ import Svg, { Path } from 'react-native-svg';
 
 interface ArrowProps {
 	color?: string;
-	widht?: number;
+	width?: number;
 	height?: number;
 }
 const Arrowicon = ({
 	color = '#000000',
-	widht = 10,
+	width = 10,
 	height = 18,
 }: ArrowProps) => {
 	return (
 		<View>
-			<Svg width={widht} height={height} viewBox="0 0 127 171">
+			<Svg width={width} height={height} viewBox="0 0 127 171">
 				<Path
 					// fill={color}
 					// fillRule="evenodd"
