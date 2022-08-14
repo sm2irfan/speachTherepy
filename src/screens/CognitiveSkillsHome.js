@@ -39,9 +39,9 @@ const CognitiveSkillsHome = ({ navigation }) => {
 			</Text>
 			<View style={styles.list}>
 				<CognitiveSkillType
-					name={'RountTable'}
+					name={'MatchVehicle'}
 					onpress={() => {
-						navigation.navigate('RountTable');
+						navigation.navigate('MatchVehicle');
 					}}
 				/>
 				<CognitiveSkillType

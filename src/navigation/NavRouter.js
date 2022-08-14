@@ -11,7 +11,7 @@ import SocialStoriesInstruction from '../screens/SocialStoriesInstruction';
 import LearnEmotionsInstruction from '../screens/LearnEmotionsInstruction';
 import InteractiveCharactersInstruction from '../screens/InteractiveCharactersInstruction';
 import CognitiveSkillsHome from '../screens/CognitiveSkillsHome';
-import RountTable from '../screens/RountTable';
+import MatchVehicle from '../screens/MatchVehicle';
 import RountTable2 from '../screens/RountTable2';
 import HalfMatch from '../screens/HalfMatch';
 import BigAndSmall from '../screens/BigAndSmall';
@@ -52,7 +52,7 @@ const NavRouter = () => {
 					name="CognitiveSkillsHome"
 					component={CognitiveSkillsHome}
 				/>
-				<Stack.Screen name="RountTable" component={RountTable} />
+				<Stack.Screen name="MatchVehicle" component={MatchVehicle} />
 				<Stack.Screen name="RountTable2" component={RountTable2} />
 				<Stack.Screen name="HalfMatch" component={HalfMatch} />
 				<Stack.Screen name="BigAndSmall" component={BigAndSmall} />

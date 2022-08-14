@@ -4,18 +4,18 @@ import Svg, { Path, Polygon } from 'react-native-svg';
 
 interface TriangleProps {
 	color?: string;
-	widht?: number;
+	width?: number;
 	height?: number;
 }
 const Triangle = ({
 	color = '#000000',
-	widht = 10,
+	width = 10,
 	height = 18,
 }: TriangleProps) => {
 	return (
 		<View>
 			<Svg
-				width={widht}
+				width={width}
 				height={height}
 				viewBox="0 0 531.74 460.5"
 				fill={color}>

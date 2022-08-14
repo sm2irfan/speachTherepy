@@ -26,15 +26,32 @@ type ContextType = {
 	translateYTriangle: number;
 	translateXHeart: number;
 	translateYHeart: number;
+
+	//second
+
+	translateXSquare2: number;
+	translateYSquare2: number;
+	translateXTriangle2: number;
+	translateYTriangle2: number;
+	translateXHeart2: number;
+	translateYHeart2: number;
 };
 
 export default function App() {
-	const translateXSquare = useSharedValue(0);
-	const translateYSquare = useSharedValue(100);
-	const translateXTriangle = useSharedValue(0);
-	const translateYTriangle = useSharedValue(0);
-	const translateXHeart = useSharedValue(0);
-	const translateYHeart = useSharedValue(0);
+	const translateXSquare = useSharedValue(-4);
+	const translateYSquare = useSharedValue(425);
+	const translateXTriangle = useSharedValue(78);
+	const translateYTriangle = useSharedValue(381);
+	const translateXHeart = useSharedValue(-111);
+	const translateYHeart = useSharedValue(429);
+
+	//second
+	const translateXSquare2 = useSharedValue(107);
+	const translateYSquare2 = useSharedValue(371);
+	const translateXTriangle2 = useSharedValue(-78);
+	const translateYTriangle2 = useSharedValue(345);
+	const translateXHeart2 = useSharedValue(0);
+	const translateYHeart2 = useSharedValue(373);
 
 	/*Square
 	 * 
@@ -58,9 +75,9 @@ export default function App() {
 				event.translationY + context.translateYSquare;
 		},
 		onEnd: () => {
-			console.log('x', translateXHeart, 'y', translateYHeart);
-			const xSitLocation = -170;
-			const ySitLocation = -175;
+			console.log('x', translateXSquare, 'y', translateYSquare);
+			const xSitLocation = 285;
+			const ySitLocation = 64;
 
 			if (
 				translateYSquare.value > ySitLocation - 40 &&
@@ -68,11 +85,11 @@ export default function App() {
 				translateXSquare.value > xSitLocation - 40 &&
 				translateXSquare.value < xSitLocation + 40
 			) {
-				translateXSquare.value = withSpring(0);
-				translateYSquare.value = withSpring(-165);
+				translateXSquare.value = withSpring(285);
+				translateYSquare.value = withSpring(64);
 			} else {
-				translateXSquare.value = withSpring(0);
-				translateYSquare.value = withSpring(100);
+				translateXSquare.value = withSpring(-4);
+				translateYSquare.value = withSpring(425);
 			}
 		},
 	});
@@ -113,8 +130,8 @@ export default function App() {
 		},
 		onEnd: () => {
 			console.log('x', translateXTriangle, 'y', translateYTriangle);
-			const xSitLocation = -170;
-			const ySitLocation = -175;
+			const xSitLocation = -97;
+			const ySitLocation = 30;
 
 			if (
 				translateYTriangle.value > ySitLocation - 40 &&
@@ -122,11 +139,11 @@ export default function App() {
 				translateXTriangle.value > xSitLocation - 40 &&
 				translateXTriangle.value < xSitLocation + 40
 			) {
-				translateXTriangle.value = withSpring(-170);
-				translateYTriangle.value = withSpring(-176);
+				translateXTriangle.value = withSpring(-97);
+				translateYTriangle.value = withSpring(30);
 			} else {
-				translateXTriangle.value = withSpring(0);
-				translateYTriangle.value = withSpring(0);
+				translateXTriangle.value = withSpring(78);
+				translateYTriangle.value = withSpring(381);
 			}
 		},
 	});
@@ -167,8 +184,8 @@ export default function App() {
 		},
 		onEnd: () => {
 			console.log('x', translateXHeart, 'y', translateYHeart);
-			const xSitLocation = -160;
-			const ySitLocation = -100;
+			const xSitLocation = -50;
+			const ySitLocation = 63;
 
 			if (
 				translateYHeart.value > ySitLocation - 40 &&
@@ -176,11 +193,11 @@ export default function App() {
 				translateXHeart.value > xSitLocation - 40 &&
 				translateXHeart.value < xSitLocation + 40
 			) {
-				translateXHeart.value = withSpring(-166);
-				translateYHeart.value = withSpring(-102);
+				translateXHeart.value = withSpring(-50);
+				translateYHeart.value = withSpring(63);
 			} else {
-				translateXHeart.value = withSpring(0);
-				translateYHeart.value = withSpring(0);
+				translateXHeart.value = withSpring(-111);
+				translateYHeart.value = withSpring(429);
 			}
 		},
 	});
@@ -198,6 +215,170 @@ export default function App() {
 		};
 	});
 
+	//second
+
+	/*Square
+	 * 
+	 * 
+	 * 
+	 * 
+	Square */
+
+	const panGestureEventSquare2 = useAnimatedGestureHandler<
+		PanGestureHandlerGestureEvent,
+		ContextType
+	>({
+		onStart: (event, context) => {
+			context.translateXSquare2 = translateXSquare2.value;
+			context.translateYSquare2 = translateYSquare2.value;
+		},
+		onActive: (event, context) => {
+			translateXSquare2.value =
+				event.translationX + context.translateXSquare2;
+			translateYSquare2.value =
+				event.translationY + context.translateYSquare2;
+		},
+		onEnd: () => {
+			console.log('x', translateXSquare2, 'y', translateYSquare2);
+			const xSitLocation = 287;
+			const ySitLocation = 12;
+
+			if (
+				translateYSquare2.value > ySitLocation - 40 &&
+				translateYSquare2.value < ySitLocation + 40 &&
+				translateXSquare2.value > xSitLocation - 40 &&
+				translateXSquare2.value < xSitLocation + 40
+			) {
+				translateXSquare2.value = withSpring(287);
+				translateYSquare2.value = withSpring(12);
+			} else {
+				translateXSquare2.value = withSpring(107);
+				translateYSquare2.value = withSpring(371);
+			}
+		},
+	});
+
+	const rStyleSquare2 = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					translateX: translateXSquare2.value,
+				},
+				{
+					translateY: translateYSquare2.value,
+				},
+			],
+		};
+	});
+
+	/*Triangel
+	 * 
+	 * 
+	 * 
+	 * 
+	Triangel */
+
+	const panGestureEventTriangle2 = useAnimatedGestureHandler<
+		PanGestureHandlerGestureEvent,
+		ContextType
+	>({
+		onStart: (event, context) => {
+			context.translateXTriangle2 = translateXTriangle2.value;
+			context.translateYTriangle2 = translateYTriangle2.value;
+		},
+		onActive: (event, context) => {
+			translateXTriangle2.value =
+				event.translationX + context.translateXTriangle2;
+			translateYTriangle2.value =
+				event.translationY + context.translateYTriangle2;
+		},
+		onEnd: () => {
+			console.log('x', translateXTriangle2, 'y', translateYTriangle2);
+			const xSitLocation = -95;
+			const ySitLocation = -18;
+
+			if (
+				translateYTriangle2.value > ySitLocation - 40 &&
+				translateYTriangle2.value < ySitLocation + 40 &&
+				translateXTriangle2.value > xSitLocation - 40 &&
+				translateXTriangle2.value < xSitLocation + 40
+			) {
+				translateXTriangle2.value = withSpring(-95);
+				translateYTriangle2.value = withSpring(-18);
+			} else {
+				translateXTriangle2.value = withSpring(-78);
+				translateYTriangle2.value = withSpring(345);
+			}
+		},
+	});
+
+	const rStyleTriangle2 = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					translateX: translateXTriangle2.value,
+				},
+				{
+					translateY: translateYTriangle2.value,
+				},
+			],
+		};
+	});
+
+	/*Heart
+	 * 
+	 * 
+	 * 
+	 * 
+	Heart */
+
+	const panGestureEventHeart2 = useAnimatedGestureHandler<
+		PanGestureHandlerGestureEvent,
+		ContextType
+	>({
+		onStart: (event, context) => {
+			context.translateXHeart2 = translateXHeart2.value;
+			context.translateYHeart2 = translateYHeart2.value;
+		},
+		onActive: (event, context) => {
+			translateXHeart2.value =
+				event.translationX + context.translateXHeart2;
+			translateYHeart2.value =
+				event.translationY + context.translateYHeart2;
+		},
+		onEnd: () => {
+			console.log('x', translateXHeart2, 'y', translateYHeart2);
+			const xSitLocation = -48;
+			const ySitLocation = 15;
+
+			if (
+				translateYHeart2.value > ySitLocation - 40 &&
+				translateYHeart2.value < ySitLocation + 40 &&
+				translateXHeart2.value > xSitLocation - 40 &&
+				translateXHeart2.value < xSitLocation + 40
+			) {
+				translateXHeart2.value = withSpring(-48);
+				translateYHeart2.value = withSpring(15);
+			} else {
+				translateXHeart2.value = withSpring(0);
+				translateYHeart2.value = withSpring(373);
+			}
+		},
+	});
+
+	const rStyleHeart2 = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					translateX: translateXHeart2.value,
+				},
+				{
+					translateY: translateYHeart2.value,
+				},
+			],
+		};
+	});
+
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
 			<View style={[styles.headShape]}>
@@ -207,7 +388,7 @@ export default function App() {
 					}}>
 					<TriangleSec
 						height={90}
-						widht={70}
+						width={70}
 						color="rgba(255, 255, 0, 0.5)"
 					/>
 				</View>
@@ -217,7 +398,7 @@ export default function App() {
 					}}>
 					<Heart
 						height={65}
-						widht={65}
+						width={65}
 						color="rgba(0, 128, 0, 0.5)"
 					/>
 				</View>
@@ -227,17 +408,17 @@ export default function App() {
 					}}>
 					<SquareSce
 						height={70}
-						widht={100}
+						width={100}
 						color="rgba(0, 0, 256, 0.5)"
 					/>
 				</View>
 			</View>
-			<View style={[styles.container, { flexDirection: 'row' }]}>
+			<View style={[{ flexDirection: 'row' }]}>
 				<PanGestureHandler onGestureEvent={panGestureEventSquare}>
 					<Animated.View style={[rStyleSquare]}>
 						<SquareSce
 							height={70}
-							widht={100}
+							width={100}
 							color="rgba(0, 0, 256, 1)"
 						/>
 					</Animated.View>
@@ -246,7 +427,7 @@ export default function App() {
 					<Animated.View style={[rStyleTriangle, { margin: 20 }]}>
 						<TriangleSec
 							height={90}
-							widht={70}
+							width={70}
 							color="rgba(255, 255, 0, 1)"
 						/>
 					</Animated.View>
@@ -255,7 +436,36 @@ export default function App() {
 					<Animated.View style={rStyleHeart}>
 						<Heart
 							height={60}
-							widht={60}
+							width={60}
+							color="rgba(0, 128, 0, 1)"
+						/>
+					</Animated.View>
+				</PanGestureHandler>
+			</View>
+			<View style={[{ flexDirection: 'row' }]}>
+				<PanGestureHandler onGestureEvent={panGestureEventSquare2}>
+					<Animated.View style={[rStyleSquare2]}>
+						<SquareSce
+							height={70}
+							width={100}
+							color="rgba(0, 0, 256, 1)"
+						/>
+					</Animated.View>
+				</PanGestureHandler>
+				<PanGestureHandler onGestureEvent={panGestureEventTriangle2}>
+					<Animated.View style={[rStyleTriangle2, { margin: 20 }]}>
+						<TriangleSec
+							height={90}
+							width={70}
+							color="rgba(255, 255, 0, 1)"
+						/>
+					</Animated.View>
+				</PanGestureHandler>
+				<PanGestureHandler onGestureEvent={panGestureEventHeart2}>
+					<Animated.View style={rStyleHeart2}>
+						<Heart
+							height={60}
+							width={60}
 							color="rgba(0, 128, 0, 1)"
 						/>
 					</Animated.View>
@@ -274,7 +484,7 @@ const styles = StyleSheet.create({
 	headShape: {
 		flexDirection: 'row',
 		transform: [{ translateX: 0 }, { translateY: 50 }],
-		height: 120,
+		height: 70,
 		backgroundColor: 'rgba(128,128,0,0.3)',
 		// padding: 5,
 		marginLeft: 2,
