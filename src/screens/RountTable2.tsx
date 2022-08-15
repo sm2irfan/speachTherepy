@@ -14,9 +14,6 @@ import {
 	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 
-import Heart from '../components/Heart';
-import SquareSce from '../components/SquareSec';
-
 const CIRCLE_RADIUS = 200;
 
 type ContextType = {
@@ -161,12 +158,12 @@ export default function App() {
 		};
 	});
 
-	/*Heart
+	/*Hart
 	 * 
 	 * 
 	 * 
 	 * 
-	Heart */
+	Hart */
 
 	const panGestureEventHeart = useAnimatedGestureHandler<
 		PanGestureHandlerGestureEvent,
@@ -325,12 +322,12 @@ export default function App() {
 		};
 	});
 
-	/*Heart
+	/*Hart
 	 * 
 	 * 
 	 * 
 	 * 
-	Heart */
+	Hart */
 
 	const panGestureEventHeart2 = useAnimatedGestureHandler<
 		PanGestureHandlerGestureEvent,
@@ -396,17 +393,13 @@ export default function App() {
 					style={{
 						transform: [{ translateX: 80 }, { translateY: 0 }],
 					}}>
-					<Heart
-						height={65}
-						width={65}
-						color="rgba(0, 128, 0, 0.5)"
-					/>
+					<Hart height={65} width={65} color="rgba(0, 128, 0, 0.5)" />
 				</View>
 				<View
 					style={{
 						transform: [{ translateX: 150 }, { translateY: 0 }],
 					}}>
-					<SquareSce
+					<SquareSec
 						height={70}
 						width={100}
 						color="rgba(0, 0, 256, 0.5)"
@@ -416,7 +409,7 @@ export default function App() {
 			<View style={[{ flexDirection: 'row' }]}>
 				<PanGestureHandler onGestureEvent={panGestureEventSquare}>
 					<Animated.View style={[rStyleSquare]}>
-						<SquareSce
+						<SquareSec
 							height={70}
 							width={100}
 							color="rgba(0, 0, 256, 1)"
@@ -434,7 +427,7 @@ export default function App() {
 				</PanGestureHandler>
 				<PanGestureHandler onGestureEvent={panGestureEventHeart}>
 					<Animated.View style={rStyleHeart}>
-						<Heart
+						<Hart
 							height={60}
 							width={60}
 							color="rgba(0, 128, 0, 1)"
@@ -445,7 +438,7 @@ export default function App() {
 			<View style={[{ flexDirection: 'row' }]}>
 				<PanGestureHandler onGestureEvent={panGestureEventSquare2}>
 					<Animated.View style={[rStyleSquare2]}>
-						<SquareSce
+						<SquareSec
 							height={70}
 							width={100}
 							color="rgba(0, 0, 256, 1)"
@@ -463,7 +456,7 @@ export default function App() {
 				</PanGestureHandler>
 				<PanGestureHandler onGestureEvent={panGestureEventHeart2}>
 					<Animated.View style={rStyleHeart2}>
-						<Heart
+						<Hart
 							height={60}
 							width={60}
 							color="rgba(0, 128, 0, 1)"
@@ -502,6 +495,41 @@ const TriangleSec = ({ color = '#000000', width = 10, height = 18 }) => {
 				<Polygon
 					stroke="#000000"
 					points="0.866,460 265.87,1 530.874,460 "
+				/>
+			</Svg>
+		</View>
+	);
+};
+
+const Hart = ({ color = '#000000', width = 10, height = 18 }) => {
+	return (
+		<View>
+			<Svg width={width} height={height} viewBox="0 0 100 100">
+				<Path
+					x={0}
+					y={7}
+					fill={color}
+					fillRule="evenodd"
+					d="M 84.646 11.504 C 75.554 1.233 58.335 -0.041 45 13.074 C 31.665 -0.041 14.446 1.233 5.354 11.504 c -9.671 10.926 -5.609 31.318 7.123 47.615 C 18.931 67.38 34.874 80.832 45 86.481 c 10.126 -5.649 26.069 -19.101 32.523 -27.362 C 90.255 42.822 94.318 22.43 84.646 11.504 z"
+				/>
+			</Svg>
+		</View>
+	);
+};
+
+const SquareSec = ({
+	color = '#000000',
+	width = 10,
+	height = 18,
+	boxWidth = 100,
+}) => {
+	return (
+		<View>
+			<Svg width={width} height={height} viewBox="0 0 100 100">
+				<Path
+					fill={color}
+					fillRule="evenodd"
+					d="M10 10 H 90 V 90 H 10 L 10 10"
 				/>
 			</Svg>
 		</View>
