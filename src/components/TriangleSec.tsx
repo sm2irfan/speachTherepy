@@ -2,16 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Svg, { Path, Polygon } from 'react-native-svg';
 
-interface TriangleProps {
-	color?: string;
-	width?: number;
-	height?: number;
-}
-const Triangle = ({
-	color = '#000000',
-	width = 10,
-	height = 18,
-}: TriangleProps) => {
+const Triangle = ({ color = '#000000', width = 10, height = 18 }) => {
 	return (
 		<View>
 			<Svg
