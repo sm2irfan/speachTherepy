@@ -12,7 +12,7 @@ import LearnEmotionsInstruction from '../screens/LearnEmotionsInstruction';
 import InteractiveCharactersInstruction from '../screens/InteractiveCharactersInstruction';
 import CognitiveSkillsHome from '../screens/CognitiveSkillsHome';
 import MatchVehicle from '../screens/MatchVehicle';
-import RountTable2 from '../screens/RountTable2';
+import ShapeIdentify from '../screens/ShapeIdentify';
 import HalfMatch from '../screens/HalfMatch';
 import BigAndSmall from '../screens/BigAndSmall';
 const Stack = createNativeStackNavigator();
@@ -53,7 +53,7 @@ const NavRouter = () => {
 					component={CognitiveSkillsHome}
 				/>
 				<Stack.Screen name="MatchVehicle" component={MatchVehicle} />
-				<Stack.Screen name="RountTable2" component={RountTable2} />
+				<Stack.Screen name="ShapeIdentify" component={ShapeIdentify} />
 				<Stack.Screen name="HalfMatch" component={HalfMatch} />
 				<Stack.Screen name="BigAndSmall" component={BigAndSmall} />
 			</Stack.Navigator>

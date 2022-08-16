@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import Animated, {
 	useAnimatedGestureHandler,
@@ -11,19 +11,7 @@ import Animated, {
 import {
 	GestureHandlerRootView,
 	PanGestureHandler,
-	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
-
-const CIRCLE_RADIUS = 200;
-
-type ContextType = {
-	translateXHartRight: number;
-	translateYHartRight: number;
-	translateXHartLeft: number;
-	translateYHartLeft: number;
-	translateXRectAngle: number;
-	translateYRectAngle: number;
-};
 
 export default function App() {
 	const translateXHartRight = useSharedValue(100);
@@ -34,16 +22,9 @@ export default function App() {
 	const translateYRectAngle = useSharedValue(0);
 
 	/*HartRight
-	 * 
-	 * 
-	 * 
-	 * 
 	HartRight */
 
-	const panGestureEventSquare = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSquare = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHartRight = translateXHartRight.value;
 			context.translateYHartRight = translateYHartRight.value;
@@ -93,16 +74,9 @@ export default function App() {
 	});
 
 	/*HartHalf Left
-	 * 
-	 * 
-	 * 
-	 * 
 	HeartHalf */
 
-	const panGestureEventTriangle = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventTriangle = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHartLeft = translateXHartLeft.value;
 			context.translateYHartLeft = translateYHartLeft.value;
@@ -152,16 +126,9 @@ export default function App() {
 	});
 
 	/*Heart RectAngle
-	 * 
-	 * 
-	 * 
-	 * 
 	Heart */
 
-	const panGestureEventHeart = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHeart = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXRectAngle = translateXRectAngle.value;
 			context.translateYRectAngle = translateYRectAngle.value;

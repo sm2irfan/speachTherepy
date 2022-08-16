@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Path, Polygon } from 'react-native-svg';
 import Animated, {
 	useAnimatedGestureHandler,
@@ -11,28 +11,7 @@ import Animated, {
 import {
 	GestureHandlerRootView,
 	PanGestureHandler,
-	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
-
-const CIRCLE_RADIUS = 200;
-
-type ContextType = {
-	translateXSquare: number;
-	translateYSquare: number;
-	translateXTriangle: number;
-	translateYTriangle: number;
-	translateXHeart: number;
-	translateYHeart: number;
-
-	//second
-
-	translateXSquare2: number;
-	translateYSquare2: number;
-	translateXTriangle2: number;
-	translateYTriangle2: number;
-	translateXHeart2: number;
-	translateYHeart2: number;
-};
 
 export default function App() {
 	const translateXSquare = useSharedValue(-4);
@@ -51,16 +30,9 @@ export default function App() {
 	const translateYHeart2 = useSharedValue(373);
 
 	/*Square
-	 * 
-	 * 
-	 * 
-	 * 
 	Square */
 
-	const panGestureEventSquare = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSquare = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSquare = translateXSquare.value;
 			context.translateYSquare = translateYSquare.value;
@@ -105,16 +77,9 @@ export default function App() {
 	});
 
 	/*Triangel
-	 * 
-	 * 
-	 * 
-	 * 
 	Triangel */
 
-	const panGestureEventTriangle = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventTriangle = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXTriangle = translateXTriangle.value;
 			context.translateYTriangle = translateYTriangle.value;
@@ -159,16 +124,9 @@ export default function App() {
 	});
 
 	/*Hart
-	 * 
-	 * 
-	 * 
-	 * 
 	Hart */
 
-	const panGestureEventHeart = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHeart = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHeart = translateXHeart.value;
 			context.translateYHeart = translateYHeart.value;
@@ -215,16 +173,9 @@ export default function App() {
 	//second
 
 	/*Square
-	 * 
-	 * 
-	 * 
-	 * 
 	Square */
 
-	const panGestureEventSquare2 = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSquare2 = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSquare2 = translateXSquare2.value;
 			context.translateYSquare2 = translateYSquare2.value;
@@ -269,16 +220,9 @@ export default function App() {
 	});
 
 	/*Triangel
-	 * 
-	 * 
-	 * 
-	 * 
 	Triangel */
 
-	const panGestureEventTriangle2 = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventTriangle2 = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXTriangle2 = translateXTriangle2.value;
 			context.translateYTriangle2 = translateYTriangle2.value;
@@ -323,16 +267,9 @@ export default function App() {
 	});
 
 	/*Hart
-	 * 
-	 * 
-	 * 
-	 * 
 	Hart */
 
-	const panGestureEventHeart2 = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHeart2 = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHeart2 = translateXHeart2.value;
 			context.translateYHeart2 = translateYHeart2.value;

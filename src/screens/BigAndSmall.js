@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import Animated, {
 	useAnimatedGestureHandler,
@@ -11,36 +11,10 @@ import Animated, {
 import {
 	GestureHandlerRootView,
 	PanGestureHandler,
-	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 
-const CIRCLE_RADIUS = 200;
 const increesBig = 10;
 const increesSmall = -20;
-type ContextType = {
-	translateXHead: number;
-	translateYHead: number;
-	translateXEar: number;
-	translateYEar: number;
-	translateXStomac: number;
-	translateYStomac: number;
-	translateXHand: number;
-	translateYHand: number;
-	translateXLeg: number;
-	translateYLeg: number;
-
-	//small
-	translateXSmallHead: number;
-	translateYSmallHead: number;
-	translateXSmallEar: number;
-	translateYSmallEar: number;
-	translateXSmallStomac: number;
-	translateYSmallStomac: number;
-	translateXSmallHand: number;
-	translateYSmallHand: number;
-	translateXSmallLeg: number;
-	translateYSmallLeg: number;
-};
 
 export default function App() {
 	const translateXHead = useSharedValue(-158);
@@ -67,16 +41,9 @@ export default function App() {
 	const translateYSmallLeg = useSharedValue(-394);
 
 	/*Head
-	 * 
-	 * 
-	 * 
-	 * 
 	Head */
 
-	const panGestureEventHead = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHead = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHead = translateXHead.value;
 			context.translateYHead = translateYHead.value;
@@ -119,16 +86,9 @@ export default function App() {
 	});
 
 	/*Ear
-	 * 
-	 * 
-	 * 
-	 * 
 	Ear */
 
-	const panGestureEventEar = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventEar = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXEar = translateXEar.value;
 			context.translateYEar = translateYEar.value;
@@ -171,16 +131,9 @@ export default function App() {
 	});
 
 	/*Stomac
-	 * 
-	 * 
-	 * 
-	 * 
 	Stomac */
 
-	const panGestureEventStomac = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventStomac = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXStomac = translateXStomac.value;
 			context.translateYStomac = translateYStomac.value;
@@ -225,16 +178,9 @@ export default function App() {
 	});
 
 	/*Hand
-	 * 
-	 * 
-	 * 
-	 * 
 	Hand */
 
-	const panGestureEventHand = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHand = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHand = translateXHand.value;
 			context.translateYHand = translateYHand.value;
@@ -277,16 +223,9 @@ export default function App() {
 	});
 
 	/*Leg
-	 * 
-	 * 
-	 * 
-	 * 
 	Leg */
 
-	const panGestureEventLeg = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventLeg = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXLeg = translateXLeg.value;
 			context.translateYLeg = translateYLeg.value;
@@ -329,16 +268,9 @@ export default function App() {
 	});
 
 	/*SmallHead
-	 * 
-	 * 
-	 * 
-	 * 
 	SmallHead */
 
-	const panGestureEventSmallHead = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSmallHead = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSmallHead = translateXSmallHead.value;
 			context.translateYSmallHead = translateYSmallHead.value;
@@ -383,16 +315,9 @@ export default function App() {
 	});
 
 	/*SmallEar
-	 * 
-	 * 
-	 * 
-	 * 
 	SmallEar */
 
-	const panGestureEventSmallEar = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSmallEar = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSmallEar = translateXSmallEar.value;
 			context.translateYSmallEar = translateYSmallEar.value;
@@ -437,16 +362,9 @@ export default function App() {
 	});
 
 	/*SmallStomac
-	 * 
-	 * 
-	 * 
-	 * 
 	SmallStomac */
 
-	const panGestureEventSmallStomac = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSmallStomac = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSmallStomac = translateXSmallStomac.value;
 			context.translateYSmallStomac = translateYSmallStomac.value;
@@ -491,16 +409,9 @@ export default function App() {
 	});
 
 	/*SmallHand
-	 * 
-	 * 
-	 * 
-	 * 
 	SmallHand */
 
-	const panGestureEventSmallHand = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSmallHand = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSmallHand = translateXSmallHand.value;
 			context.translateYSmallHand = translateYSmallHand.value;
@@ -545,16 +456,9 @@ export default function App() {
 	});
 
 	/*SmallLeg
-	 * 
-	 * 
-	 * 
-	 * 
 	SmallLeg */
 
-	const panGestureEventSmallLeg = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSmallLeg = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSmallLeg = translateXSmallLeg.value;
 			context.translateYSmallLeg = translateYSmallLeg.value;

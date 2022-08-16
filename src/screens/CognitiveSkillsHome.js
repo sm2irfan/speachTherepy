@@ -45,9 +45,9 @@ const CognitiveSkillsHome = ({ navigation }) => {
 					}}
 				/>
 				<CognitiveSkillType
-					name={'RountTable2'}
+					name={'ShapeIdentify'}
 					onpress={() => {
-						navigation.navigate('RountTable2');
+						navigation.navigate('ShapeIdentify');
 					}}
 				/>
 				<CognitiveSkillType

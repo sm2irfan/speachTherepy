@@ -11,32 +11,7 @@ import Animated, {
 import {
 	GestureHandlerRootView,
 	PanGestureHandler,
-	PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
-
-import TriangleSec from '../components/TriangleSec';
-import Heart from '../components/Heart';
-import SquareSce from '../components/SquareSec';
-
-const CIRCLE_RADIUS = 200;
-
-type ContextType = {
-	translateXSquare: number;
-	translateYSquare: number;
-	translateXTriangle: number;
-	translateYTriangle: number;
-	translateXHeart: number;
-	translateYHeart: number;
-
-	//second
-
-	translateXSquare2: number;
-	translateYSquare2: number;
-	translateXTriangle2: number;
-	translateYTriangle2: number;
-	translateXHeart2: number;
-	translateYHeart2: number;
-};
 
 export default function App() {
 	const translateXSquare = useSharedValue(30);
@@ -46,25 +21,9 @@ export default function App() {
 	const translateXHeart = useSharedValue(102);
 	const translateYHeart = useSharedValue(413);
 
-	//second
-	const translateXSquare2 = useSharedValue(107);
-	const translateYSquare2 = useSharedValue(371);
-	const translateXTriangle2 = useSharedValue(-78);
-	const translateYTriangle2 = useSharedValue(345);
-	const translateXHeart2 = useSharedValue(0);
-	const translateYHeart2 = useSharedValue(373);
-
 	/*Square
-	 * 
-	 * 
-	 * 
-	 * 
 	Square */
-
-	const panGestureEventSquare = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventSquare = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXSquare = translateXSquare.value;
 			context.translateYSquare = translateYSquare.value;
@@ -109,16 +68,9 @@ export default function App() {
 	});
 
 	/*Triangel
-	 * 
-	 * 
-	 * 
-	 * 
 	Triangel */
 
-	const panGestureEventTriangle = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventTriangle = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXTriangle = translateXTriangle.value;
 			context.translateYTriangle = translateYTriangle.value;
@@ -163,16 +115,9 @@ export default function App() {
 	});
 
 	/*Heart
-	 * 
-	 * 
-	 * 
-	 * 
 	Heart */
 
-	const panGestureEventHeart = useAnimatedGestureHandler<
-		PanGestureHandlerGestureEvent,
-		ContextType
-	>({
+	const panGestureEventHeart = useAnimatedGestureHandler({
 		onStart: (event, context) => {
 			context.translateXHeart = translateXHeart.value;
 			context.translateYHeart = translateYHeart.value;
